@@ -14,7 +14,7 @@ $projects = Model::factory('Projects')->get_all();
 $to_echo = '';
 foreach($projects as $p)
 {
-	$to_echo .= "<a class='project' href='".URL::site('projects/'.$p['id'])."'>{$p['name']}</a>\n";
+	$to_echo .= "<a class='project' href='".URL::site('projects/details/'.$p['id'])."'>{$p['name']}</a>\n";
 }
 echo $to_echo;
 ?>

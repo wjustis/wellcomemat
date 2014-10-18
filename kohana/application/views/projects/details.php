@@ -31,7 +31,34 @@ foreach($tasks as $t)
 }
 echo $to_echo;
 ?>
-</table>
+</table><br />
 
+<input type='button' onclick='toggleForm(this);' value='Add New Task' style='display: block; margin: auto;' /><br />
+<form id='newtask' method='post' action='<?=URL::site('projects/add');?>' style='display: none;'>
+	<input type='hidden' name='project_id' value="<?=htmlentities($project_id);?>" />
+	<label for='date'>Due At:</label><input id='date' name='due_at' required />
+	<label for='name'>Task Name:</label><input id='name' name='name' required />
+	<input type='submit' value='Add Task' />
+	<input type='reset' />
+</form>
+
+<script type='text/javascript'>
+function toggleForm(btn_el)
+{
+	var form_el = document.getElementById( 'newtask' );
+	var showing = ( form_el.style.display != 'none' );
+	if(showing)
+	{
+		btn_el.value = "Add New Task";
+		form_el.style.display = "none";
+	}
+	else
+	{
+		btn_el.value = "Hide Form";
+		form_el.style.display = "block";
+		form_el.getElementsByTagName( 'input' )[0].select();
+	}
+}
+</script>
 </body>
 </html>

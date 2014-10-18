@@ -61,3 +61,37 @@ table {
 		padding: 0.5em;
 	}
 
+form {
+	background: #fff;
+	border-radius: 2px;
+	box-shadow: 0 0.5em 2em -0.4em rgba(0,0,0,0.5);
+	display: block;
+	margin: auto;
+	max-width: 20em;
+	padding: 1em;
+}
+
+	label {
+		display: block;
+		font-size: 0.9em;
+		font-weight: 700;
+	}
+
+	input {
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+		font-size: 0.8em;
+		display: block;
+		margin-bottom: 1em;
+		padding: 0.5em;
+		width: 100%;
+	}
+
+	input[type=button], input[type=submit], input[type=reset] {
+		display: inline-block;
+		width: auto;
+	}
+
+	input[type=reset] {
+		float: right;
+	}

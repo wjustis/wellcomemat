@@ -145,8 +145,9 @@ Route::set('default', '' )
 		'action'     => 'index',
 	));
 
-Route::set('projects', 'projects(/<id>)',
+Route::set('projects', 'projects(/<action>(/<id>))',
 	array(
+		'action' => '(list|details|add)',
 		'id' => '\d+',
 	))->defaults(array(
 		'controller' => 'projects',

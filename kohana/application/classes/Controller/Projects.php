@@ -4,6 +4,17 @@ class Controller_Projects extends Controller {
 
 	public function action_index()
 	{
+		return $this->action_list();
+	}
+
+	public function action_list()
+	{
+		$view = View::factory( 'projects/list' );
+		$this->response->body( $view );
+	}
+
+	public function action_details()
+	{
 		$project_id = $this->request->param( 'id', FALSE );
 		if( $project_id === FALSE ) return $this->action_list();
 		$view = View::factory( 'projects/details' );
@@ -11,10 +22,14 @@ class Controller_Projects extends Controller {
 		$this->response->body( $view );
 	}
 
-	public function action_list()
+	public function action_add()
 	{
-		$view = View::factory( 'projects/list' );
-		$this->response->body( $view );
+		$project_id = Arr::get($_POST, 'project_id', FALSE );
+		$due_at = Arr::get($_POST, 'due_at', FALSE );
+		$name = Arr::get($_POST, 'name', FALSE );
+		if($project_id === false || $due_at === FALSE || $name === FALSE) $this->redirect( 'projects' );
+		Model::factory( 'Tasks' )->add_task( $project_id, $due_at, $name );
+		$this->redirect( 'projects/details/'.$project_id );
 	}
 
 }
