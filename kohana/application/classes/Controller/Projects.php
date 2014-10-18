@@ -32,6 +32,14 @@ class Controller_Projects extends Controller {
 		$this->redirect( 'projects/details/'.$project_id );
 	}
 
+	public function action_update()
+	{
+		$task_id = Arr::get( $_POST, 'task_id', FALSE );
+		$is_complete = Arr::get( $_POST, 'complete', FALSE );
+		if( $task_id === false ) return;
+		Model::factory( 'Tasks' )->set_complete( $task_id, $is_complete );
+	}
+
 }
 
 ?>

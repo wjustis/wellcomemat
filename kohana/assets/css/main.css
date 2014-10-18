@@ -55,6 +55,7 @@ table {
 
 	tr.complete {
 		background: rgba(0,255,0,0.4) !important;
+		text-decoration: line-through;
 	}
 
 	td {
@@ -87,7 +88,7 @@ form {
 		width: 100%;
 	}
 
-	input[type=button], input[type=submit], input[type=reset] {
+	input[type=button], input[type=submit], input[type=reset], input[type=checkbox] {
 		display: inline-block;
 		width: auto;
 	}

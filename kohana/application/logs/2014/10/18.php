@@ -1259,3 +1259,64 @@
 2014-10-18 18:18:18 --- EMERGENCY: ErrorException [ 1 ]: Call to undefined method Controller_Projects::post() ~ APPPATH/classes/Controller/Projects.php [ 27 ] in file:line
 2014-10-18 18:18:18 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
 #1 {main} in file:line
+2014-10-18 18:31:51 --- EMERGENCY: Database_Exception [ 1054 ]: Unknown column 'complete' in 'field list' [ UPDATE tasks SET complete = 'true' WHERE id = '6' ] ~ MODPATH/database/classes/Kohana/Database/MySQL.php [ 194 ] in /home/www-data/wellcomemat/kohana/modules/database/classes/Kohana/Database/Query.php:251
+2014-10-18 18:31:51 --- DEBUG: #0 /home/www-data/wellcomemat/kohana/modules/database/classes/Kohana/Database/Query.php(251): Kohana_Database_MySQL->query(3, 'UPDATE tasks SE...', false, Array)
+#1 /home/www-data/wellcomemat/kohana/application/classes/Model/Tasks.php(27): Kohana_Database_Query->execute()
+#2 /home/www-data/wellcomemat/kohana/application/classes/Controller/Projects.php(40): Model_Tasks->set_complete('6', 'true')
+#3 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Controller.php(84): Controller_Projects->action_update()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Projects))
+#6 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#8 /home/www-data/wellcomemat/kohana/index.php(118): Kohana_Request->execute()
+#9 {main} in /home/www-data/wellcomemat/kohana/modules/database/classes/Kohana/Database/Query.php:251
+2014-10-18 18:32:50 --- EMERGENCY: Database_Exception [ 1054 ]: Unknown column 'complete' in 'field list' [ UPDATE tasks SET complete = 'true' WHERE id = '6' ] ~ MODPATH/database/classes/Kohana/Database/MySQL.php [ 194 ] in /home/www-data/wellcomemat/kohana/modules/database/classes/Kohana/Database/Query.php:251
+2014-10-18 18:32:50 --- DEBUG: #0 /home/www-data/wellcomemat/kohana/modules/database/classes/Kohana/Database/Query.php(251): Kohana_Database_MySQL->query(3, 'UPDATE tasks SE...', false, Array)
+#1 /home/www-data/wellcomemat/kohana/application/classes/Model/Tasks.php(27): Kohana_Database_Query->execute()
+#2 /home/www-data/wellcomemat/kohana/application/classes/Controller/Projects.php(40): Model_Tasks->set_complete('6', 'true')
+#3 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Controller.php(84): Controller_Projects->action_update()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Projects))
+#6 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#8 /home/www-data/wellcomemat/kohana/index.php(118): Kohana_Request->execute()
+#9 {main} in /home/www-data/wellcomemat/kohana/modules/database/classes/Kohana/Database/Query.php:251
+2014-10-18 18:34:00 --- EMERGENCY: Database_Exception [ 1054 ]: Unknown column 'complete' in 'field list' [ UPDATE tasks SET complete = 'true' WHERE id = '6' ] ~ MODPATH/database/classes/Kohana/Database/MySQL.php [ 194 ] in /home/www-data/wellcomemat/kohana/modules/database/classes/Kohana/Database/Query.php:251
+2014-10-18 18:34:00 --- DEBUG: #0 /home/www-data/wellcomemat/kohana/modules/database/classes/Kohana/Database/Query.php(251): Kohana_Database_MySQL->query(3, 'UPDATE tasks SE...', false, Array)
+#1 /home/www-data/wellcomemat/kohana/application/classes/Model/Tasks.php(27): Kohana_Database_Query->execute()
+#2 /home/www-data/wellcomemat/kohana/application/classes/Controller/Projects.php(40): Model_Tasks->set_complete('6', 'true')
+#3 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Controller.php(84): Controller_Projects->action_update()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Projects))
+#6 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#8 /home/www-data/wellcomemat/kohana/index.php(118): Kohana_Request->execute()
+#9 {main} in /home/www-data/wellcomemat/kohana/modules/database/classes/Kohana/Database/Query.php:251
+2014-10-18 18:34:14 --- EMERGENCY: Database_Exception [ 1054 ]: Unknown column 'complete' in 'field list' [ UPDATE tasks SET complete = 'true' WHERE id = '6' ] ~ MODPATH/database/classes/Kohana/Database/MySQL.php [ 194 ] in /home/www-data/wellcomemat/kohana/modules/database/classes/Kohana/Database/Query.php:251
+2014-10-18 18:34:14 --- DEBUG: #0 /home/www-data/wellcomemat/kohana/modules/database/classes/Kohana/Database/Query.php(251): Kohana_Database_MySQL->query(3, 'UPDATE tasks SE...', false, Array)
+#1 /home/www-data/wellcomemat/kohana/application/classes/Model/Tasks.php(27): Kohana_Database_Query->execute()
+#2 /home/www-data/wellcomemat/kohana/application/classes/Controller/Projects.php(40): Model_Tasks->set_complete('6', 'true')
+#3 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Controller.php(84): Controller_Projects->action_update()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Projects))
+#6 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#8 /home/www-data/wellcomemat/kohana/index.php(118): Kohana_Request->execute()
+#9 {main} in /home/www-data/wellcomemat/kohana/modules/database/classes/Kohana/Database/Query.php:251
+2014-10-18 18:34:38 --- EMERGENCY: Database_Exception [ 1054 ]: Unknown column 'complete' in 'field list' [ UPDATE tasks SET complete = 'true' WHERE id = '6' ] ~ MODPATH/database/classes/Kohana/Database/MySQL.php [ 194 ] in /home/www-data/wellcomemat/kohana/modules/database/classes/Kohana/Database/Query.php:251
+2014-10-18 18:34:38 --- DEBUG: #0 /home/www-data/wellcomemat/kohana/modules/database/classes/Kohana/Database/Query.php(251): Kohana_Database_MySQL->query(3, 'UPDATE tasks SE...', false, Array)
+#1 /home/www-data/wellcomemat/kohana/application/classes/Model/Tasks.php(27): Kohana_Database_Query->execute()
+#2 /home/www-data/wellcomemat/kohana/application/classes/Controller/Projects.php(40): Model_Tasks->set_complete('6', 'true')
+#3 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Controller.php(84): Controller_Projects->action_update()
+#4 [internal function]: Kohana_Controller->execute()
+#5 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Request/Client/Internal.php(97): ReflectionMethod->invoke(Object(Controller_Projects))
+#6 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Request/Client.php(114): Kohana_Request_Client_Internal->execute_request(Object(Request), Object(Response))
+#7 /home/www-data/wellcomemat/kohana/system/classes/Kohana/Request.php(986): Kohana_Request_Client->execute(Object(Request))
+#8 /home/www-data/wellcomemat/kohana/index.php(118): Kohana_Request->execute()
+#9 {main} in /home/www-data/wellcomemat/kohana/modules/database/classes/Kohana/Database/Query.php:251
+2014-10-18 18:37:31 --- EMERGENCY: ErrorException [ 1 ]: Cannot pass parameter 2 by reference ~ APPPATH/classes/Model/Tasks.php [ 25 ] in file:line
+2014-10-18 18:37:31 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line
+2014-10-18 18:37:45 --- EMERGENCY: ErrorException [ 1 ]: Cannot pass parameter 2 by reference ~ APPPATH/classes/Model/Tasks.php [ 25 ] in file:line
+2014-10-18 18:37:45 --- DEBUG: #0 [internal function]: Kohana_Core::shutdown_handler()
+#1 {main} in file:line

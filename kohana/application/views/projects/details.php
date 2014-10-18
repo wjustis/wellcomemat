@@ -7,6 +7,7 @@ $tasks = Model::factory("Tasks")->get_by_project_id($project_id);
 <head>
 	<title>Projects</title>
 	<link rel='stylesheet' type='text/css' href='<?=URL::site('assets/css/main.css');?>' />
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -17,7 +18,7 @@ $tasks = Model::factory("Tasks")->get_by_project_id($project_id);
 	<tr>
 		<th class='C'>Due</th>
 		<th>Task Name</th>
-		<th class='C'>Completed</th>
+		<th class='C'>Complete</th>
 	</tr>
 <?php
 $to_echo = '';
@@ -26,7 +27,9 @@ foreach($tasks as $t)
 	$to_echo .= "\t<tr".( $t['completed'] ? " class='complete'" : "" ).">\n";
 	$to_echo .= "\t\t<td class='C'>".date( 'm/d/Y', strtotime( $t['due_at'] ) )."</td>\n";
 	$to_echo .= "\t\t<td>{$t['name']}</td>\n";
-	$to_echo .= "\t\t<td class='C'>".( $t['completed'] ? "yes" : "no" )."</td>\n";
+	$to_echo .= "\t\t<td class='C'>";
+	$to_echo .= "<input type='checkbox'".( $t['completed'] ? " checked" : "" )." onchange='toggleComplete( this )' data-task='{$t['id']}' />";
+	$to_echo .= "</td>\n";
 	$to_echo .= "\t</tr>\n";
 }
 echo $to_echo;
@@ -58,6 +61,18 @@ function toggleForm(btn_el)
 		form_el.style.display = "block";
 		form_el.getElementsByTagName( 'input' )[0].select();
 	}
+}
+function toggleComplete(cb_el)
+{
+	var is_checked = cb_el.checked;
+	var task_id = cb_el.getAttribute( 'data-task' );
+	$.post( '<?=URL::site('projects/update');?>', { 'task_id':task_id, 'complete':is_checked }, function(resp)
+	{
+		if(resp.length > 0) console.log( resp );
+		var tr = cb_el.parentNode.parentNode;
+		if(is_checked) tr.setAttribute( 'class', 'complete' );
+		else tr.removeAttribute( 'class' );
+	});
 }
 </script>
 </body>
